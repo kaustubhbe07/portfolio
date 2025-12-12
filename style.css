@@ -1,0 +1,678 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Add this to the very top of your CSS file */
+html {
+    scroll-behavior: smooth; /* This is the magic line! */
+}
+
+/* --- Scroll Offset Fix for Fixed Navigation --- */
+/* Select all elements that can be targetted by a fragment URL (#id) */
+/* This includes all your main content sections */
+#hero, 
+#about, 
+#my-projects, 
+#contact {
+    /* Set the margin at the top of the scroll target equal to the fixed nav height */
+    scroll-margin-top: 60px;
+}
+
+/* Your existing CSS (e.g., *, body, a, nav, etc.) goes here */
+
+
+body{
+    background-color: #778da9;
+}
+
+a{
+    text-decoration: none;
+    color: #e0e1dd;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color:#1b263b ; */
+    background-image:linear-gradient(to right,#0d1b2a,#1b263b,#415a77 ,#1b263b,#0d1b2a) ;
+    color:#e0e1dd ;
+    padding:10px 0 ;
+
+    position: fixed; /* 1. Fixes the element relative to the viewport */
+    top: 0;          /* 2. Positions it at the top edge of the viewport */
+    width: 100%;     /* 3. Ensures it spans the full width of the screen */
+    z-index: 1000;   /* 4. Ensures it stays above all other content */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft, dark shadow for depth */
+    border-bottom: 3px solid #415a77; /* Thicker accent line at the bottom */
+
+
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: "Science Gothic", sans-serif;
+}
+
+nav ul{ /* targeting ul inside nav*/
+    display: flex;
+    gap: 20px;
+
+}
+
+nav ul li{
+    list-style-type: none;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* NEW: Link Styling and Hover Effects */
+
+nav ul li a {
+   
+ /* Target the actual link */
+    text-decoration: none;
+    color: #e0e1dd;
+    padding: 5px 0; /* Creates space for the underline effect */
+    
+    /* Enable smooth transitions for hover effects */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #415a77; /* Change text color to accent color on hover */
+    /* Add an animated underline effect using border-bottom */
+    border-bottom: 2px solid #e0e1dd; 
+}
+
+  /*hero section*/
+.hero{
+    /* background-color: #1b263b; */
+    padding: 30px;
+    background-image:linear-gradient(to right,#0d1b2a,#1b263b,#1b263b,#0d1b2a) ;
+    height: 35vw;
+    margin: 10px;
+    margin-top:66.8px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hero-left{
+    color: #e0e1dd;
+    text-align: right;
+}
+
+.hero-left .one{
+    font-size:45px ;
+}
+.hero-left .two{
+    font-size: 30px;
+}
+
+.hero-left .three{
+    font-size: 15px;
+}
+
+.hero-right #photo{
+    border-radius: 15px;
+}
+
+.btn{
+    background-color:#415a77 ;
+    color: #e0e1dd;
+    padding: 8px;
+    border: 2px solid #0d1b2a;
+    font-size: 15px;
+    border-radius: 100px;
+    cursor: pointer;
+    margin: 0 10px;
+    
+}
+
+/* --- ABOUT ME SECTION STYLING --- */
+.about-me-section {
+    background-image: linear-gradient(to right, #0d1b2a, #1b263b, #1b263b, #0d1b2a);
+    color: #e0e1dd;
+    padding: 60px 20px;
+    margin: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.about-me-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #e0e1dd;
+}
+
+.about-content-wrapper {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: flex-start; /* Aligns content to the top */
+}
+
+/* --- Left Column (Image) --- */
+.about-left {
+    flex: 1; /* Takes up 1 part of the space */
+    text-align: center;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 300px; /* Constrains max size on large screens */
+    height: auto;
+    border-radius: 15px; /* Matches the style of your hero image */
+    border: 3px solid #415a77; /* Accent border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Right Column (Text) --- */
+.about-right {
+    flex: 2; /* Takes up 2 parts of the space (wider text column) */
+}
+
+.about-right h3 {
+    color: #415a77;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.about-right p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+/* --- Skills List --- */
+.skills-list {
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #1b263b; /* Subtle background for the skills box */
+    border-radius: 8px;
+    border-left: 5px solid #415a77;
+}
+
+.skills-list h4 {
+    margin-bottom: 10px;
+    color: #e0e1dd;
+    font-size: 1.2em;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex; /* Makes the list items flow horizontally */
+    flex-wrap: wrap; 
+    gap: 15px;
+}
+
+.skills-list li {
+    background-color: #415a77;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* --- Download Button (Uses the existing .btn class) --- */
+.download-btn {
+    margin-top: 15px;
+    display: inline-block; /* Allows padding and margin to work */
+    text-decoration: none;
+}
+
+
+/* --- RESPONSIVENESS (For screens 768px and smaller) --- */
+@media (max-width: 768px) {
+    .about-content-wrapper {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .about-left,
+    .about-right {
+        flex: auto; /* Allow items to take natural width */
+        width: 100%;
+    }
+
+    .about-right {
+        order: 2; /* Text appears below the image */
+    }
+
+    .about-left {
+        order: 1; /* Image appears above the text */
+    }
+    
+    .about-right h3 {
+        font-size: 1.5em;
+    }
+    
+    .skills-list ul {
+        justify-content: center; /* Center the skills items when stacked */
+    }
+}
+
+
+/*projecs*/
+.my-projects{
+    background-image:linear-gradient(to right,#0d1b2a,#1b263b ,#1b263b,#0d1b2a) ;
+    height: 58vh;
+    margin: 10px;
+    color: #e0e1dd;
+    padding: 60px 20px;
+}
+
+.heading{
+    margin: 10px;
+}
+
+.projects{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pimg{
+    height: 300px;
+    width: 350px;
+}
+
+.pbtn{
+    background-color:#415a77 ;
+    color: #e0e1dd;
+    padding: 8px;
+    border: 2px solid #0d1b2a;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 0;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Target Tablets and smaller desktops (Max width: 1024px) */
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li {
+        font-size: 18px;
+    }
+
+    .hero {
+        height: auto; /* Allow height to adjust based on content */
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px;
+    }
+
+    .hero-left {
+        text-align: center; /* Center the text content */
+        order: 2; /* Move text below the image */
+    }
+    
+    .hero-right {
+        order: 1; /* Move image to the top */
+        margin-bottom: 20px;
+    }
+
+    .hero-left .one {
+        font-size: 35px;
+    }
+    .hero-left .two {
+        font-size: 25px;
+    }
+
+    .hero-right #photo {
+        max-width: 80%; /* Shrink image a bit */
+        height: auto;
+    }
+
+    .my-projects {
+        height: auto; /* Allow height to adjust */
+        padding: 20px 10px;
+    }
+
+    .projects {
+        flex-direction: column; /* Stack projects vertically */
+        gap: 40px; /* Add space between stacked projects */
+    }
+
+    .pimg {
+        width: 90%; /* Make images fill most of the container */
+        height: auto;
+    }
+
+    /* PROJECT SECTION ADJUSTMENTS */
+    .my-projects {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .projects {
+        /* Revert to horizontal display for 2-in-a-row */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: space-around; /* Distributes space around the two items */
+        gap: 20px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .pimg {
+        /* Set width for 2-in-a-row layout */
+        width: 45%; /* Slightly less than 50% to account for gap/padding */
+        height: 250px; /* Reduced fixed height for a smaller look */
+        object-fit: cover; /* Ensures image covers the area without distortion */
+    }
+
+    /* GENERAL ADJUSTMENTS for 1024px and below */
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li {
+        font-size: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .hero-left {
+        text-align: center;
+        order: 2;
+    }
+    
+    .hero-right {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+}
+
+/* Target Mobile Phones (Max width: 600px) */
+@media (max-width: 600px) {
+    /* NAVIGATION BAR */
+    nav {
+        flex-direction: column; /* Stack logo and menu vertically */
+        align-items: flex-start; /* Align everything to the left */
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        font-size: 16px;
+    }
+    
+    /* HERO SECTION */
+    .hero-left .one {
+        font-size: 30px;
+    }
+    .hero-left .two {
+        font-size: 20px;
+    }
+    
+    .btn {
+        padding: 6px 15px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    /* PROJECTS SECTION */
+    .heading {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* PROJECT SECTION ADJUSTMENTS (1 in a row) */
+    .projects {
+        flex-direction: column; /* Stack vertically for 1-in-a-row */
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .pimg {
+        width: 90%; /* Single item takes up most of the width */
+        height: 200px; /* Further reduced height for mobile */
+        margin: 0 auto; /* Center the image if it's not 100% width */
+    }
+    
+    /* NAVIGATION BAR */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        font-size: 16px;
+    }
+    
+    /* HERO SECTION */
+    .hero-left .one {
+        font-size: 30px;
+    }
+    .hero-left .two {
+        font-size: 20px;
+    }
+    
+    .btn {
+        padding: 6px 15px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+}
+
+/* Styling for the Contact Section */
+.contact-me {
+     background-image:linear-gradient(to right,#0d1b2a,#1b263b ,#1b263b,#0d1b2a) ;
+    padding: 60px 20px;
+    text-align: center;
+    /* background-color: #f4f4f9; Light background for contrast */
+    margin: 10px;
+    /* height: 55vh; */
+}
+
+.contact-me h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #e0e1dd;
+}
+
+/* Styling for the Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background:#778da9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color:#e0e1dd;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0d1b2a;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allows user to resize the message box vertically */
+}
+
+/* Styling for the Submit Button */
+.submit-btn {
+    background-color:#415a77 ; /* Primary brand color */
+    color: #e0e1dd;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for Direct Contact Info */
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.contact-info h3 {
+    color: #e0e1dd;
+    margin-bottom: 15px;
+}
+.contact-info p {
+    color:#778da9 ;
+}
+
+.contact-info a {
+     color: #e0e1dd;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer Styling --- */
+footer {
+    /* Use the darkest background color from your palette */
+    background-image: linear-gradient(to right, #0d1b2a, #1b263b, #0d1b2a);
+    color: #e0e1dd; /* Light text color for contrast */
+    padding: 20px 10px;
+    text-align: center;
+    margin: 10px; /* Separates it visually from the last section */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.social-links a {
+    /* Uses the light text color, defined globally, but styling specific links */
+    color: #e0e1dd; 
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #415a77; /* Use the primary accent color for a subtle hover effect */
+    text-decoration: underline;
+}
+
+/* Styling for Contact Column */
+/* (Rest of the .footer-contact CSS remains the same) */
+.footer-content h3{
+    margin-top: 15px;
+}
+.social-icons {
+    margin-top: 20px; /* Added some space above icons */
+}
+
+.social-icons a {
+    display: inline-block;
+    color: #e0e1dd;
+    background-color: transparent; /* Start with transparent background */
+    border: 2px solid #e0e1dd; /* Thicker border for better visibility */
+    border-radius: 50%;
+    width: 35px; /* Slightly larger size */
+    height: 35px;
+    line-height: 30px; /* Adjust line-height to center text/emojis vertically */
+    text-align: center;
+    margin-right: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-decoration: none; /* Important for links */
+}
+
+.social-icons a:hover {
+    background-color: #415a77;
+    border-color: #415a77;
+}
+
+/* Ensure the footer also looks good on mobile */
+@media (max-width: 600px) {
+    .footer-content {
+        padding: 0 10px;
+    }
+    
+    .footer-content p {
+        font-size: 0.9em;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .social-links a {
+        margin: 5px 0;
+        padding: 5px 0;
+        border-top: 1px solid #1b263b; /* Subtle line to separate stacked links */
+    }
+}
